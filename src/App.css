@@ -1,0 +1,92 @@
+#root {
+  max-width: 1280px;
+  max-height: fit-content;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin: 0;
+  padding: 0; */
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.Sign_up {
+  position: absolute;
+
+  width: auto;
+  height: fit-content !important;
+  background: linear-gradient(
+    360deg,
+    rgba(227, 227, 227, 1) 0%,
+    rgba(253, 250, 246, 1) 100%
+  );
+  overflow: hidden;
+}
+
+.logoimg {
+  /* left: 100px; */
+
+  width: 650px;
+  height: 120px;
+  opacity: 1;
+  padding-top: 40px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3px;
+  display: flex;
+  justify-content: center;
+}
+.create_an_account {
+  position: relative;
+  padding-top: 30px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: auto;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"] {
+  position: static;
+  width: 525px;
+  padding: 12px 20px !important;
+  margin: 7px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #707070;
+  /* font-family: "Plus Jakarta Sans"; */
+  font-style: italic;
+  background: transparent;
+  outline: none;
+}
+.checkbox {
+  font-family: "Plus Jakarta Sans";
+  font-weight: bold;
+  color: #403f3f;
+  margin-right: 3px;
+}
+.terms_policies {
+  /* font-family: "Plus Jakarta Sans"; */
+  font-style: italic;
+  color: #403f3f;
+  display: flex;
+  align-items: start;
+}
+button[type="submit"] {
+  height: 30px;
+  width: 70px;
+  background: #e7305b;
+  border: none;
+  border-radius: 5px;
+  font-family: "Plus Jakarta Sans";
+  color: white;
+  font-size: 12px;
+  display: flex;
+  justify-content: start;
+}

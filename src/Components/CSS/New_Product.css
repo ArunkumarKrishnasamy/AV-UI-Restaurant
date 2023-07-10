@@ -1,0 +1,362 @@
+.header {
+  min-height: auto;
+  width: 100%;
+  position: relative;
+  background-size: cover;
+  z-index: 99;
+}
+.navbar {
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 3px 6px #00000029;
+}
+.navbar img {
+  width: 150px;
+}
+.nav-links {
+  flex: 1;
+  text-align: right;
+}
+.nav-links ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+.nav-links ul li a {
+  text-decoration: none;
+  font-family: Plus Jakarta Sans;
+  font-size: 20px;
+}
+.nav-links ul li a:hover {
+  font-size: 18px;
+  font-weight: bold;
+  color: #e7305b;
+  margin: auto;
+  transition: 0.5s;
+}
+nav .material-symbols-outlined {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  body {
+    font-size: 10px !important;
+  }
+
+  .nav-links ul li {
+    display: block;
+    color: white;
+    font-weight: bold;
+  }
+  .nav-links {
+    position: absolute;
+    background: #eaa35d;
+    height: 100vh;
+    width: 200px;
+    top: 0;
+    right: 0px;
+    text-align: left;
+    z-index: 2;
+  }
+
+  nav .material-symbols-outlined {
+    display: block;
+    color: white;
+    margin: 10px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  .nav-links ul {
+    padding: 30px;
+  }
+  .belowlinelst {
+    font-size: 12px !important;
+    margin-top: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  .nav-links ul li svg {
+    display: none;
+  }
+
+  #lab2 {
+    font-size: 35px !important;
+  }
+  #lab {
+    font-size: 25px !important;
+  }
+}
+.ri button:hover {
+  color: #e7305b;
+}
+
+.rdropdown {
+  float: right;
+  position: relative;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropbtn {
+  background-color: white;
+  color: #353535;
+  padding: 20px;
+  font-size: 16px;
+  border: none;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  opacity: 1;
+  min-width: 190px;
+  z-index: 4;
+  padding: 14px;
+}
+.dropdown-content a {
+  color: black;
+  padding: 15px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.back_p {
+  position: relative;
+  top: 4rem;
+  padding-left: 28rem;
+  text-align: center;
+  font-family: "Plus Jakarta Sans";
+  font-weight: 500;
+  z-index: -1;
+  font-size: 60px;
+  color: #e3e3e3;
+}
+.front_p {
+  position: relative;
+  font-family: "Plus Jakarta Sans";
+  font-weight: 500;
+  text-align: center;
+  font-size: 40px;
+}
+.ul {
+  border-radius: 5px;
+  background: #e7305b;
+  height: 7px;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  top: 80px;
+}
+.lefticonbox {
+  position: relative;
+  float: left;
+  /* list-style: none; */
+  padding-left: 20px;
+  padding-right: 40px;
+  color: black;
+  padding-top: 5px;
+  margin: 30px 0;
+}
+.np_label {
+  /* top: 100px; */
+  /* left: 620px; */
+  width: "100%";
+  align-content: center;
+  height: 20px;
+  font-family: "Plus Jakarta Sans";
+  font-weight: 500;
+  z-index: 0;
+  position: relative;
+}
+.p_label {
+  width: "100%";
+  align-content: center;
+  height: 10px;
+  font-family: "Plus Jakarta Sans";
+  font-weight: 500;
+  z-index: 0;
+
+  position: relative;
+  /* box-sizing: border-box; */
+}
+.ri {
+  float: right;
+  padding-top: 10px;
+  padding-left: 100px;
+  right: 80px;
+}
+.leftbox {
+  /* top: 40px; */
+  /* position: relative; */
+  float: left;
+  list-style: none;
+  color: black;
+  padding-left: 20px;
+  padding-right: 40px;
+  font-family: "Plus Jakarta Sans";
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.belowlinelst {
+  color: #e7305b;
+  display: inline;
+  font-size: 15px;
+  font-family: "Plus Jakarta Sans";
+  padding-right: 5px;
+  padding-left: 10px;
+  transition: transform 0.2s;
+  cursor: pointer;
+  position: relative;
+}
+.addproduct {
+  background-color: #e7305b;
+  color: white;
+  /* display:block; */
+  float: right;
+  font-size: 15px;
+  font-family: "Plus Jakarta Sans";
+  padding: 10px;
+
+  transition: transform 0.2s;
+  cursor: pointer;
+  position: relative;
+}
+
+.belowlinelst:hover {
+  border: 2px solid #e7305b;
+  border-radius: 6px;
+  background-color: #e7305b;
+  color: white;
+  transform: scale(0.5);
+}
+.productname {
+  position: relative;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #707070;
+  font-style: italic;
+  background: transparent;
+  outline: none;
+}
+#prod {
+  position: relative;
+  width: 40%;
+  border: none;
+  border-bottom: 1px solid #707070;
+  font-family: "Plus Jakarta Sans";
+  font-style: italic;
+  background: transparent;
+  outline: none;
+}
+.dbgOuter {
+  position: relative;
+  top: 10rem;
+  right: 16rem;
+  padding: 3px 8px 0px 14px;
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 10.5pt;
+}
+.dbgCont {
+  display: inline-block;
+  height: 24px;
+  margin-left: 6px;
+}
+/* Base for label styling */
+.dbgCheck:not(:checked),
+.dbgCheck:checked {
+  position: absolute;
+  left: -9999px;
+}
+.dbgCheck:not(:checked) + label,
+.dbgCheck:checked + label {
+  display: inline-block;
+  position: relative;
+  padding-left: 24px;
+  cursor: pointer;
+}
+/* checkbox aspect */
+.dbgCheck:not(:checked) + label:before,
+.dbgCheck:checked + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #aaa;
+  background: #f8f8f8;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+/* checkmark aspect */
+.dbgCheck:not(:checked) + label:after,
+.dbgCheck:checked + label:after {
+  content: "✔";
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  font-size: 14px;
+  color: #09ad7e;
+  transition: all 0.2s;
+}
+/* checked mark aspect changes */
+.dbgCheck:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+.dbgCheck:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+/* disabled checkbox */
+.dbgCheck:disabled:not(:checked) + label:before,
+.dbgCheck:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+.dbgCheck:disabled:checked + label:after {
+  color: #999;
+}
+.dbgCheck:disabled + label {
+  color: #aaa;
+}
+/* accessibility */
+.dbgCheck:checked:focus + label:before,
+.dbgCheck:not(:checked):focus + label:before {
+  border: 1px dotted blue;
+}
+
+.dbgCheck {
+  display: inline-block;
+  width: 90px;
+  height: 24px;
+  margin: 1em;
+}
+
+.newbutton {
+  /* width: 40%; */
+  float: left;
+}
+
+.newbutton a {
+  text-decoration: underline;
+  text-decoration-color: #e7305b;
+}
+.prodtype {
+  position: relative;
+  font-family: Plus Jakarta Sans;
+  font-size: 18px;
+  /* padding-right: 20px; */
+}

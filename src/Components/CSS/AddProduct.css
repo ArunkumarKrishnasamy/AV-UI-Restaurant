@@ -1,0 +1,260 @@
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+  line-height: 14px;
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #e7305b;
+}
+
+span a:hover {
+  color: #e7305b;
+}
+
+span {
+  color: #000000;
+}
+.navbar {
+  background: white;
+  box-shadow: 0px 3px 6px #00000029;
+  height: 90px;
+  z-index: 15;
+}
+
+/* Nav bar list style */
+.navbar li {
+  float: left;
+  list-style: none;
+  margin: 20px 20px;
+}
+.pagelogo {
+  top: 53px;
+  left: 300px;
+  width: 180px;
+  height: 50px;
+  opacity: 1;
+  padding-top: 25px;
+  padding-left: 30px;
+  display: flex;
+
+  align-items: start;
+  align-content: start;
+}
+
+/* right floating box */
+.rightbox {
+  float: right;
+  list-style: none;
+  margin: 5px 0;
+  padding-left: 400px;
+  color: black;
+  font-family: "Plus Jakarta Sans";
+  z-index: 10;
+}
+.rightbox li {
+  list-style: none;
+}
+.rightbox li a:hover {
+  font-size: 17px;
+  color: #e7305b;
+  transition: 0.3s;
+  font-weight: bold;
+}
+/*end of rightbox with hovering*/
+
+/* logout */
+#logout {
+  position: relative;
+  /* font-family: "Plus Jakarta Sans"; */
+  font-weight: bold;
+  color: #403f3f;
+}
+
+/* notification */
+#notification {
+  position: relative;
+  /* font-family: "Plus Jakarta Sans"; */
+  font-weight: bold;
+  color: #000000;
+}
+
+/* Left floating box */
+.leftbox {
+  position: relative;
+  float: left;
+  list-style: none;
+  padding-left: 20px;
+  padding-right: 40px;
+  color: black;
+  padding-top: 5px;
+  top: 55px;
+  /* font-family: "Plus Jakarta Sans"; */
+  margin: 30px 0;
+}
+
+/* overall right menu floating for dropdown options */
+.ri {
+  float: right;
+  padding-top: 40px;
+  padding-left: 100px;
+  right: 80px;
+}
+
+.ri button:hover {
+  color: #e7305b;
+}
+
+.rdropdown {
+  float: right;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropbtn {
+  background-color: white;
+  color: #353535;
+  padding: 20px;
+  font-size: 16px;
+  border: none;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  opacity: 1;
+  min-width: 160px;
+  z-index: 4;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* tabs specification*/
+.indes {
+  z-index: 2;
+  padding-top: 150px;
+}
+/* input tab */
+.tabs input {
+  visibility: hidden;
+  display: none;
+}
+
+/* buttons */
+.buttons {
+  position: relative;
+  width: 100%;
+  top: 20px;
+  left: 80px;
+  display: flex;
+  background: white;
+  padding-top: 0.5%;
+  z-index: 0;
+}
+
+.buttons label {
+  width: 28.33%;
+  color: black;
+  opacity: 0.75;
+  text-align: center;
+  padding: 7px 0;
+  cursor: pointer;
+  font-family: "Plus Jakarta Sans";
+  font-weight: bold;
+}
+
+/* icon box*/
+.righticonbox {
+  position: relative;
+  /* float: right; */
+  top: 0.2%;
+  display: inline-block;
+  list-style: none;
+  margin: "2px" "0";
+  padding-right: 50px;
+  font-family: "Plus Jakarta Sans";
+  z-index: 1;
+  height: 20px;
+}
+.list {
+  float: right;
+  top: 100px;
+}
+.list-items {
+  padding: 20px;
+  height: 20px;
+  background-color: white;
+}
+.list-item__content {
+  padding: 100px;
+  border: 1px solid black;
+}
+.np_label {
+  top: 100px;
+  left: 620px;
+  width: fit-content;
+  align-content: baseline;
+  height: 10px;
+  font-family: "Plus Jakarta Sans";
+  font-weight: 500;
+  z-index: 0;
+  position: relative;
+}
+
+.p_label {
+  /* top: 190px; */
+  width: 20x;
+  height: 30px;
+  text-align: left;
+  align-content: baseline;
+  height: 10px;
+  font-family: "Plus Jakarta Sans";
+  font-weight: 500;
+  z-index: 0;
+  position: relative;
+}
+.ul {
+  border-radius: 5px;
+  background: #e7305b;
+  height: 7px;
+  width: 1000px;
+  margin-left: 10px;
+}
+
+.updtqtylst {
+  color: #e7305b;
+  display: inline;
+
+  font-size: 20px;
+  padding-right: 5px;
+  padding-left: 10px;
+  /* font-family: "Plus Jakarta Sans"; */
+  transition: transform 0.2s;
+  position: relative;
+  list-style: none;
+  /* top: 200px; */
+  float: left;
+
+  /* right: 280px; */
+}
+.updtqtylst:hover {
+  border: 2px solid #e7305b; /* Change the color to your desired highlight color */
+  border-radius: 6px;
+  background-color: #e7305b;
+  color: white;
+  transform: scale(1);
+}

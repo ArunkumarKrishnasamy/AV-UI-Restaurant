@@ -1,0 +1,253 @@
+.tabs input {
+  visibility: hidden;
+  display: none;
+}
+.buttons {
+  position: relative;
+  width: 100%;
+  top: 20px;
+  left: 80px;
+  display: flex;
+  background: white;
+  padding-top: 0.5%;
+  z-index: 0;
+}
+.buttons label {
+  width: 28.33%;
+  color: black;
+  opacity: 0.75;
+  text-align: center;
+  padding: 7px 0;
+  cursor: pointer;
+  font-family: "Plus Jakarta Sans";
+  font-weight: bold;
+}
+.tabs input:nth-child(1):checked ~ .buttons label:nth-child(1),
+.tabs input:nth-child(2):checked ~ .buttons label:nth-child(2),
+.tabs input:nth-child(3):checked ~ .buttons label:nth-child(3) {
+  opacity: 1;
+}
+.underline {
+  position: absolute;
+  /* left: 80px; */
+  bottom: 0;
+  width: 245px;
+  height: 5px;
+  background: #e7305b;
+  transition: 0.5s;
+  border-radius: 10px;
+  padding-left: 40px;
+}
+.tabs input:nth-child(1):checked ~ .buttons .underline {
+  left: 0;
+}
+.tabs input:nth-child(2):checked ~ .buttons .underline {
+  left: 30%;
+}
+.tabs input:nth-child(3):checked ~ .buttons .underline {
+  left: 60%;
+}
+.righticonbox {
+  position: relative;
+  margin-top: 100px;
+  float: right;
+  top: 0.2%;
+  /* display: inline-block; */
+  top: 25px;
+  list-style: none;
+  margin: 2px 0;
+  margin-right: 0;
+  /* padding-right: 50px;   */
+  font-family: "Plus Jakarta Sans";
+  z-index: 1;
+  height: 20px;
+}
+.list {
+  float: right;
+  top: 50px;
+}
+.list-items {
+  padding: 20px;
+  height: 20px;
+  background-color: white;
+}
+.list-item__content {
+  padding: 100px;
+  border: 1px solid black;
+}
+/* table content*/
+.tablebody {
+  z-index: 2;
+  padding-top: 100px;
+  padding-left: 150px;
+}
+.table {
+  position: fixed;
+  width: 100%;
+
+  top: 250px;
+  left: 80px;
+  padding: 5px;
+  background-color: white;
+}
+.table li {
+  list-style: none;
+  margin: 20px 20px;
+  display: inline-block;
+  padding: 20px;
+}
+tr:last-child {
+  border-bottom: none;
+  border-left: #e7305b;
+  background-color: white;
+}
+
+th {
+  border-left: #e7305b;
+  padding: 5px;
+  font-family: "Plus Jakarta Sans";
+  text-align: center;
+}
+th:nth-child(2),
+th:nth-child(3),
+th:nth-child(4),
+th:nth-child(5),
+th:nth-child(6) {
+  border-left: solid 2px red;
+}
+
+tr {
+  text-align: center;
+}
+.lastsec {
+  position: relative;
+  top: 80px;
+  /* left: 50px; */
+  display: flex;
+  width: 1000px;
+  align-content: center;
+  padding-left: 300px;
+  margin-bottom: 100px;
+}
+button[type="submit"] {
+  height: 30px;
+  /* width: 60px; */
+  background: #e7305b;
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  font-family: "Plus Jakarta Sans";
+  color: white;
+  font-size: 12px;
+  align-items: center;
+}
+button[type="submit"]:hover {
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+/* labels below red line line */
+.validate {
+  background-color: #e7305b;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+.belowlinelst {
+  color: #e7305b;
+  /* display: inline-block; */
+  font-size: 20px;
+  /* font-family: "Plus Jakarta Sans"; */
+  transition: 0.3s;
+  float: left;
+  padding-left: 20px;
+  margin-left: 10px;
+}
+.belowlinelst:hover {
+  border: 2px solid #e7305b;
+  border-radius: 6px;
+  background-color: #e7305b;
+  color: white;
+  transform: scale(1);
+}
+.rightdiv {
+  float: right;
+  width: 40%;
+  text-align: right;
+}
+/* center  content's labels style */
+.col_lis {
+  list-style: none;
+  color: black;
+  font-size: 18px;
+  float: left;
+}
+/* center textbox and combo box style*/
+.listext {
+  border: none;
+  border-bottom: 2px solid #dfdcdc;
+  width: 50%;
+  font-size: 19px;
+}
+/* media query for all the font to reduce size according to the screen */
+@media screen and (max-width: 580px) {
+  body {
+    font-size: 10px !important;
+  }
+
+  .blw_btn {
+    font-size: 12px !important;
+  }
+  .belowlinelst {
+    font-size: 12px !important;
+    margin-top: 10px !important;
+    padding-right: 10px !important;
+  }
+  .col_lis {
+    font-size: 12px !important;
+  }
+  #validate {
+    font-size: 12px !important;
+  }
+  .dropmenu {
+    font-size: 11px !important;
+  }
+  #lab2 {
+    font-size: 35px !important;
+  }
+  #lab {
+    font-size: 25px !important;
+  }
+  .lbl {
+    font-size: 12px !important;
+  }
+  #abtproduct {
+    font-size: 12px !important;
+  }
+  #logoimg {
+    top: 53px;
+    left: 300px;
+    width: 100px;
+    height: 30px;
+    opacity: 1;
+    padding-top: 25px;
+    padding-left: 30px;
+    display: block;
+  }
+}
+/* bottom buttons style*/
+
+.blw_btn {
+  background-color: transparent;
+  display: inline-block;
+  border: none;
+  font-size: 19px;
+  color: #dfdcdc;
+  border-bottom: 2px solid#dfdcdc;
+  padding-right: 20px;
+}
+.blw_btn:hover {
+  border-bottom: 3px solid #e7305b;
+  color: #000000;
+}
