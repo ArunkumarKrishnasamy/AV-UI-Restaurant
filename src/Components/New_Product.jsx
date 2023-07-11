@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/logo.svg";
 import "../../node_modules/bootstrap/js/src/dropdown.js";
 import "../Components/CSS/New_Product.css";
 import { useFormik } from "formik";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useDropzone } from "react-dropzone";
 
 function New_Product() {
   const navigate = useNavigate();
+  const [file, setFile] = useState(null);
+  const HandleFile = (acceptedFiles) => {
+    setFile(acceptedFiles[0]);
+  };
+  const HandleRemoveFile = () => {
+    setFile(null);
+  };
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop: HandleFile,
+    accept: "image/*",
+    multiple: false,
+    onDragOver: HandleFile,
+  });
   const formik = useFormik({
     initialValues: {
       product_name: "",
@@ -225,20 +239,59 @@ function New_Product() {
               </div>
             </div>
             <div className="col d-flex justify-content-center">
-              <button
-                style={{
-                  display: "block",
-                  width: "120px",
-                  height: "80px",
-                  borderRadius: "10px",
-                  borderWidth: "2px",
-                  borderColor: "#707070",
-                }}
-                // onclick="document.getElementById('getFile').click()"
-              >
-                <span className="material-symbols-outlined">add_a_photo</span>
-              </button>
-              <input type="file" id="getFile" style={{ display: "none" }} />
+              <div {...getRootProps()} className="file-upload">
+                {isDragActive ? (
+                  <input
+                    type="file"
+                    onChange={HandleFile}
+                    id="getFile"
+                    style={{ display: "none" }}
+                    {...getInputProps()}
+                  />
+                ) : (
+                  <button
+                    style={{
+                      display: "block",
+                      width: "120px",
+                      height: "80px",
+                      borderRadius: "10px",
+                      borderWidth: "2px",
+                      borderColor: "#707070",
+                    }}
+                    // onclick="document.getElementById('getFile').click()"
+                  >
+                    <span className="material-symbols-outlined">
+                      add_a_photo
+                    </span>
+                  </button>
+                )}
+                {file && (
+                  <div>
+                    <div className="row">
+                      <p className="col-8">{file.name}</p>
+                      <button
+                        className="text-secondary col-4"
+                        onClick={HandleRemoveFile}
+                      >
+                        X
+                      </button>
+                    </div>
+                    <img
+                      className="img-fluid"
+                      src={URL.createObjectURL(file)}
+                      alt="Upoaded file"
+                      style={{
+                        display: "block",
+                        width: "120px",
+                        height: "80px",
+                        borderRadius: "10px",
+                        borderWidth: "2px",
+                        borderColor: "#707070",
+                      }}
+                    />
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>

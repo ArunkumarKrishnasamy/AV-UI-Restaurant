@@ -151,6 +151,28 @@ app.get("/receipts", async (req, res) => {
     res.status(500).json({ message: " Getting Receipts went wrong" });
   }
 });
+
+const multer = require("multer");
+const storage = multer.diskStorage({
+  destination: (req, file, callback) => {
+    pool(null, "/images");
+  },
+  filename: (req, file, callback) => {
+    pool(
+      null,
+      file.fieldname + "_" + Date.now() + path.extname(file.originalname)
+    );
+  },
+});
+
+const upload = multer({
+  storage: storage,
+});
+const path = require("path");
+// Post image
+app.post("/upload", upload.single("image"), (req, res) => {
+  console.log(req.file);
+});
 // Web Server
 const PORT = 3001 || process.env.PORT;
 app.listen(PORT, () => {
