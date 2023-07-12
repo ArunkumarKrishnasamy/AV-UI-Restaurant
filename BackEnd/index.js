@@ -154,24 +154,32 @@ app.get("/receipts", async (req, res) => {
 
 const multer = require("multer");
 const storage = multer.diskStorage({
-  destination: (req, file, callback) => {
-    pool(null, "/images");
+  destination: (req, file, cb) => {
+    cb(null, "/images");
   },
-  filename: (req, file, callback) => {
-    pool(
+  filename: (req, file, cb) => {
+    cb(
       null,
       file.fieldname + "_" + Date.now() + path.extname(file.originalname)
     );
   },
 });
-
+let maxsize = 1 * 1000 * 1000;
 const upload = multer({
   storage: storage,
+  limits: { fileSize: maxsize },
 });
 const path = require("path");
 // Post image
-app.post("/upload", upload.single("image"), (req, res) => {
+app.post("/addproduct", upload.single("image"), (req, res) => {
+  if (!req.file) {
+    return res
+      .status(400)
+      .json({ message: "No Image was uploaded" })
+      .send("No file uploaded");
+  }
   console.log(req.file);
+  res.json({ message: "Image uploaded" }).send("File uploaded");
 });
 // Web Server
 const PORT = 3001 || process.env.PORT;

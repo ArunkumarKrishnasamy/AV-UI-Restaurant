@@ -258,3 +258,6 @@ span {
   color: white;
   transform: scale(1);
 }
+.remove-photo {
+  color: red;
+}

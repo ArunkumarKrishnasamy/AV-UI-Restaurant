@@ -36,15 +36,20 @@ function Search_Product({ products }) {
             position: "relative",
             top: "10px",
             height: "30px",
-            width: "80%",
+            width: "100%",
             paddingLeft: "10px",
+            borderRight: "none",
           }}
-          className="border border-right-0"
+          className="border border-right-0 me-0"
           onChange={handleChange}
         />
         <div className="">{ProductResults ? searchList() : null}</div>
       </div>
-      <button type="submit" style={{ position: "relative", top: "10px" }}>
+      <button
+        type="submit"
+        style={{ position: "relative", top: "10px", width: "5em" }}
+        className="p-2 ms-0"
+      >
         Search
       </button>
     </>

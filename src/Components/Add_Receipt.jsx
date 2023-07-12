@@ -172,7 +172,10 @@ function Add_Receipt() {
         </div>
         <div className="rdropdown">
           <div className="dropdown">
-            <button className="dropbtn">Products</button>
+            <Link to={"/products"}>
+              {" "}
+              <button className="dropbtn">Products</button>
+            </Link>
           </div>
         </div>
         <div className="rdropdown">
@@ -245,7 +248,6 @@ function Add_Receipt() {
           style={{ paddingLeft: "0px", top: "-20px" }}
         >
           <ul>
-            <li className="belowlinelst">Print label</li>
             <Link to={"/receipts"}>
               {" "}
               <li
@@ -267,9 +269,9 @@ function Add_Receipt() {
           <button
             type="submit"
             id="validate"
-            className="d-flex justiy-content-center ms-5 validate"
+            className="belowlinelst d-flex justiy-content-center ms-5 validate"
             style={{
-              font: "20px",
+              font: "30px",
               border: "2px solid #e7305b",
               borderRadius: "6px",
               backgroundColor: "#e7305b",

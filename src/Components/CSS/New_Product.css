@@ -360,3 +360,7 @@ nav .material-symbols-outlined {
   font-size: 18px;
   /* padding-right: 20px; */
 }
+.remove-photo {
+  color: red;
+  cursor: pointer;
+}

@@ -1,7 +1,14 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import logo from "../assets/logo.svg";
-import panner from "../assets/Images/panner.png";
+import image1 from "../assets/Images/panner.png";
+import image2 from "../assets/Images/potato.jpg";
+import image3 from "../assets/Images/salt.jpg";
+import image4 from "../assets/Images/cheese.jpg";
+import image5 from "../assets/Images/tomato.jpg";
+import image6 from "../assets/Images/chillies.jpg";
+import image7 from "../assets/Images/Beans.jpg";
+import image8 from "../assets/Images/Water.png";
 import "../../node_modules/bootstrap/js/src/dropdown.js";
 import "../Components/CSS/New_Product.css";
 import { Link, useNavigate } from "react-router-dom";
@@ -9,6 +16,16 @@ import Search_Product from "./Search_component/Search_Product";
 
 function Product_List() {
   const [products, setProducts] = useState([]);
+  const images = [
+    image1,
+    image2,
+    image3,
+    image4,
+    image5,
+    image6,
+    image7,
+    image8,
+  ];
   const navigate = useNavigate();
   const FetchProducts = async () => {
     try {
@@ -118,7 +135,10 @@ function Product_List() {
             </Link>
             <div className="dropdown-content">
               <p>Transfer</p>
-              <a href="#">Receipts</a>
+              <Link to={"/receipts"}>
+                {" "}
+                <a href="#">Receipts</a>
+              </Link>
               <a href="#">Deliveries</a>
               <p>Adjustments</p>
               <a href="#">Physical inventory</a>
@@ -193,69 +213,94 @@ function Product_List() {
             position: "relative",
             // top: "140px",
             // left: "950px",
-            width: "50%",
+            // width: "50%",
           }}
-          className="row justify-content-start"
+          className="row justify-content-between"
         >
-          <form className="d-flex mt-2 ms-2" role="search">
+          <form className="col d-flex mt-2 ms-2" role="search">
             <Search_Product products={products} />
 
             <div className="d-flex align-items-end ms-5">
               <Link to={"/addproduct"}>
                 {" "}
-                <button type="submit" className="mt-2">
+                <button
+                  style={{ width: "5em", marginTop: "10px" }}
+                  type="submit"
+                >
                   Add
                 </button>
               </Link>
             </div>
           </form>
+
+          {/* icons floating right */}
+          <div className="righticonbox col">
+            <ul className="list">
+              <li className="list-items" style={{ display: "inline-block" }}>
+                <div className="list-items-content">
+                  <a href="#" style={{ textDecoration: "none" }}>
+                    <span
+                      className="material-symbols-outlined"
+                      style={{ color: "black" }}
+                    >
+                      filter_list
+                    </span>
+                    <span className="label" style={{ color: "black" }}>
+                      Filter
+                    </span>
+                  </a>
+                </div>
+              </li>
+              <li className="list-items" style={{ display: "inline-block" }}>
+                <div className="list-items-content">
+                  <a href="#" style={{ textDecoration: "none" }}>
+                    <span
+                      className="material-symbols-outlined"
+                      style={{ color: "black" }}
+                    >
+                      group_work
+                    </span>
+                    <span className="label" style={{ color: "black" }}>
+                      Group by
+                    </span>
+                  </a>
+                </div>
+              </li>
+              <li className="list-items" style={{ display: "inline-block" }}>
+                <div className="list-items-content">
+                  <a href="#" style={{ textDecoration: "none" }}>
+                    <span
+                      className="material-symbols-outlined"
+                      style={{ color: "black" }}
+                    >
+                      favorite
+                    </span>
+                    <span className="label" style={{ color: "black" }}>
+                      Favourites
+                    </span>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
-        {/* icons floating right */}
-        {/* <div
-          style={{
-            position: "relative",
-            top: "10px",
-            left: "1000px", 
-            width: "30%",
-          }}
-        >
-          <ul className="list">
-            <li className="list-items" style={{ display: "inline-block" }}>
-              <div className="list-items-content">
-                <a href="#" style={{ textDecoration: "none" }}>
-                  <span className="material-symbols-outlined">filter_list</span>
-                  <span className="label">Filter</span>
-                </a>
-              </div>
-            </li>
-            <li className="list-items" style={{ display: "inline-block" }}>
-              <div className="list-items-content">
-                <a href="#" style={{ textDecoration: "none" }}>
-                  <span className="material-symbols-outlined">group_work</span>
-                  <span className="label">Group by</span>
-                </a>
-              </div>
-            </li>
-            <li className="list-items" style={{ display: "inline-block" }}>
-              <div className="list-items-content">
-                <a href="#" style={{ textDecoration: "none" }}>
-                  <span className="material-symbols-outlined">favorite</span>
-                  <span className="label">Favourites</span>
-                </a>
-              </div>
-            </li>
-          </ul>
-        </div> */}
+
         <div className="row g-0 ">
-          {products.map((product) => {
+          {products.map((product, index) => {
             const { sales_price, cost, product_name, id } = product;
             return (
               <div
-                className="card m-1"
-                style={{ width: "14rem", top: "50px", paddingLeft: "20px" }}
+                className="card m-1 d-flex justify-content-center align-items-center"
+                style={{
+                  width: "12em",
+                  left: "60px",
+                  top: "50px",
+                  paddingLeft: "20px",
+                }}
               >
+                {console.log(images)}
                 <img
-                  src={panner}
+                  src={images[index]}
                   className="card-img-top img-fluid"
                   alt="..."
                 />
@@ -265,8 +310,13 @@ function Product_List() {
                   <p className="card-text">&#8377;{cost}</p>
                   <a
                     href="#"
-                    class="btn btn-danger"
-                    style={{ background: "#E7305B;" }}
+                    class="btn btn-danger p-1"
+                    style={{
+                      background: "#E7305B;",
+                      width: "80px",
+                      height: "35px ",
+                      fontSize: "15px",
+                    }}
                     onClick={() => {
                       HandleDelete(id);
                     }}
@@ -276,9 +326,14 @@ function Product_List() {
                   <a
                     href="#"
                     className="ms-2 btn btn-primary"
-                    style={{ background: "#E7305B;" }}
+                    style={{
+                      background: "#E7305B;",
+                      width: "50px",
+                      height: "35px ",
+                      fontSize: "15px",
+                    }}
                   >
-                    Favourite
+                    Fav
                   </a>
                 </div>
               </div>

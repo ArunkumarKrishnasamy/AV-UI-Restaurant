@@ -117,8 +117,12 @@ function Log_In() {
           </span>
         </p>
         <div className="ms-2 mb-5">
-          <button type="submit" className="ms-5  signup_button">
-            sign in
+          <button
+            type="submit"
+            style={{ width: "6em" }}
+            className="ms-5  signup_button"
+          >
+            Sign In
           </button>
           <br />
           <p className="checkbox d-flex align-items-start ms-5">

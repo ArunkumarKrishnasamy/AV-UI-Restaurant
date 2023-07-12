@@ -106,7 +106,10 @@ function Receipts() {
         </div>
         <div className="rdropdown">
           <div className="dropdown">
-            <button className="dropbtn">Products</button>
+            <Link to={"/products"}>
+              {" "}
+              <button className="dropbtn">Products</button>
+            </Link>
           </div>
         </div>
         <div className="rdropdown">
