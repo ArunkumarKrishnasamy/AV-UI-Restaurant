@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useDropzone } from "react-dropzone";
 
@@ -6,6 +7,15 @@ function Add_Photo() {
   const HandleFile = (acceptedFiles) => {
     setFile(acceptedFiles[0]);
     setShowImage(true);
+    const formData = new FormData();
+    formData.append("file", file);
+    try {
+      axios.post("http://localhost:3001/upload", formData).then((res) => {
+        console.log(res);
+      });
+    } catch (error) {
+      console.error(error);
+    }
   };
   const [file, setFile] = useState(null);
   const HandleRemoveFile = (e) => {
@@ -22,19 +32,21 @@ function Add_Photo() {
     <div {...getRootProps()} className="file-upload">
       <input {...getInputProps()} />
       {showImage ? (
-        <img
-          className="img-fluid"
-          src={URL.createObjectURL(file)}
-          alt="Upoaded file"
-          style={{
-            display: "block",
-            width: "120px",
-            height: "80px",
-            borderRadius: "10px",
-            borderWidth: "2px",
-            borderColor: "#707070",
-          }}
-        />
+        <>
+          <img
+            className="img-fluid"
+            src={URL.createObjectURL(file)}
+            alt="Upoaded file"
+            style={{
+              display: "block",
+              width: "120px",
+              height: "80px",
+              borderRadius: "10px",
+              borderWidth: "2px",
+              borderColor: "#707070",
+            }}
+          />
+        </>
       ) : (
         <button
           style={{
@@ -61,17 +73,9 @@ function Add_Photo() {
         <div className="row">
           <p
             className="col-8 text-wrap"
-            style={{ width: "6rem", overflow: "hidden" }}
+            style={{ width: "8rem", overflow: "visible" }}
           >
             {file.name}
-          </p>
-
-          <p
-            style={{ background: "transparent" }}
-            className="remove-photo col-4 "
-            onClick={HandleRemoveFile}
-          >
-            X
           </p>
         </div>
       )}

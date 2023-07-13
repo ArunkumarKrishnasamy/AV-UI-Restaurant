@@ -170,15 +170,17 @@ const upload = multer({
   limits: { fileSize: maxsize },
 });
 const path = require("path");
+const ejs = require("ejs");
+// app.set("view engine", ejs);
 // Post image
-app.post("/addproduct", upload.single("image"), (req, res) => {
+app.post("/addphoto", upload.single("image"), (req, res) => {
   if (!req.file) {
     return res
       .status(400)
       .json({ message: "No Image was uploaded" })
       .send("No file uploaded");
   }
-  console.log(req.file);
+  console.log(req);
   res.json({ message: "Image uploaded" }).send("File uploaded");
 });
 // Web Server
